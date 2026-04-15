@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест Физик</title>
+  <link rel="stylesheet" href="glav.css">
+</head>
+<body>
+  <canvas id="bg-network"></canvas>
+
+  <header>
+    <button class="admin-btn" type="button" id="adminButton">
+      <canvas id="adminIcon" width="60" height="60"></canvas>
+    </button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h2 class="physics-title">Тест-Физика <br> 9 Класс</h2>
+      <button class="start_btn" id="startTestBtn">Начать тест</button>
+    </div>
+  </section>
+
+  <div class="modal-backdrop" id="modeModal">
+    <div class="modal-window">
+      <h3 class="modal-title">Выберите режим</h3>
+      <div class="mode-buttons">
+        <button class="mode-btn normal" id="normalModeBtn">
+          <span>Обычный</span>
+          <small>Без ФИО</small>
+        </button>
+        <button class="mode-btn account" id="accountModeBtn">
+          <span>Учётный</span>
+          <small>С ФИО и классом</small>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="accountModal">
+    <div class="modal-window">
+      <h3 class="modal-title">Учётный режим</h3>
+      <div class="form-group">
+        <label>ФИО</label>
+        <input type="text" id="fioInput" placeholder="Иванов Иван Иванович">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Класс</label>
+          <input type="number" id="classNumInput" min="8" max="11" value="9">
+        </div>
+        <div class="form-group">
+          <label>Буква</label>
+          <input type="text" id="classLetterInput" maxlength="1" value="А">
+        </div>
+      </div>
+      <button class="start_btn" id="accountSubmitBtn">Начать тест</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="adminModal">
+    <div class="modal-window" id="adminStage1">
+      <h3 class="modal-title">Панель управления</h3>
+      <div class="form-group">
+        <label>Пароль</label>
+        <input type="password" id="adminPassInput" placeholder="••••••••">
+        <div class="error-msg" id="adminError"></div>
+      </div>
+      <button class="start_btn" id="adminPassSubmit">Ввод</button>
+      <button id="adminSettingsBtn">⚙️ Настройки</button>
+    </div>
+
+    <div class="modal-window" id="adminStage2" style="display: none;">
+      <h3 class="modal-title">Выбор темы</h3>
+      <div class="topics-grid">
+        <button class="topic-btn active" data-topic="kinematika">Кинематика</button>
+        <button class="topic-btn" data-topic="dinamika">Динамика</button>
+        <button class="topic-btn" data-topic="statika">Статика</button>
+        <button class="topic-btn" data-topic="sokhranenie">Законы сохранения</button>
+        <button class="topic-btn all" data-topic="all">Все темы</button>
+      </div>
+      <div class="form-group">
+        <label>Количество вопросов</label>
+        <input type="range" id="questionCountSlider" min="1" max="50" value="10">
+        <span id="questionCountValue">10</span>
+      </div>
+      <div class="admin-actions">
+        <button class="start_btn" id="adminResultsBtn">Результаты</button>
+        <button class="start_btn secondary" id="adminSaveBtn">Сохранить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

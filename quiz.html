@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест-Физика — Вопросы</title>
+  <link rel="stylesheet" href="glav.css">
+</head>
+<body>
+  <canvas id="bg-network"></canvas>
+
+  <header>
+    <button class="admin-btn" type="button" id="adminButton">
+      <canvas id="adminIcon" width="60" height="60"></canvas>
+    </button>
+  </header>
+
+  <main class="quiz">
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-header">
+        <h2 class="physics-title small">Вопрос <span id="questionIndex">1</span></h2>
+        <div class="quiz-counter">
+          <span id="currentQuestion">1</span>/<span id="totalQuestions">5</span>
+        </div>
+      </div>
+
+      <div class="quiz-body">
+        <div class="quiz-main">
+          <div class="quiz-question" id="questionText"></div>
+
+          <div class="quiz-options" id="optionsContainer">
+          </div>
+        </div>
+
+        <div class="answer-indicator" id="answerIndicator">
+          <div class="answer-icon" id="answerIcon">✓</div>
+          <div class="answer-text" id="answerText">Верно</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-card" id="resultCard" hidden>
+      <h2 class="physics-title small">Результат теста</h2>
+
+      <div class="result-layout">
+        <div class="result-circle">
+          <svg viewBox="0 0 160 160">
+            <circle class="circle-bg" cx="80" cy="80" r="60"></circle>
+            <circle class="circle-progress" cx="80" cy="80" r="60"></circle>
+          </svg>
+          <div class="circle-center">
+            <div id="percentText">0%</div>
+          </div>
+        </div>
+
+        <div class="result-stats">
+          <div class="stat-row">
+            <span>Правильных ответов:</span>
+            <strong id="correctCount">0</strong>
+          </div>
+          <div class="stat-row">
+            <span>Неправильных ответов:</span>
+            <strong id="wrongCount">0</strong>
+          </div>
+          <div class="stat-row">
+            <span>Точность:</span>
+            <strong id="accuracyText">0%</strong>
+          </div>
+          <div class="stat-row">
+            <span>Оценка (10‑балльная):</span>
+            <strong id="gradeText">0 / 10</strong>
+          </div>
+
+          <button class="start_btn" id="restartBtn">Пройти ещё раз</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
